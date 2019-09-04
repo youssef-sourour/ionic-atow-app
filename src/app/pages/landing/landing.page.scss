@@ -1,0 +1,19 @@
+.logo {
+  width: 300px;
+  height: 180px;
+  margin: 20px auto 8px;
+  border-radius: 10%;
+  background: url("/assets/imgs/logo.png") no-repeat;
+  background-size: 100%;
+}
+
+ion-button{
+  width:100%;
+  --border-radius: 100px;
+  --ion-color-primary: #ffce01;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3171e0;
+  --ion-color-primary-tint: #4c8dff;
+}

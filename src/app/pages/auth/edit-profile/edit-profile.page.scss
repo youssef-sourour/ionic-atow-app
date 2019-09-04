@@ -1,0 +1,33 @@
+.profile {
+  ion-card {
+    width: 100%;
+    border-radius: 0;
+    background-color: #fff;
+    ion-card-content {
+      padding: 32px;
+      color: #fff;
+      text-align: center;
+
+      ion-img {
+        height: 128px;
+        width: 128px;
+        border-radius: 50%;
+        border: solid 4px #fff;
+        display: inline;
+        box-shadow: 0 0 28px rgba(255,255,255, .65);
+      }
+    }
+  }
+
+  ion-item {
+    ion-input {
+      border-bottom: 1px solid var(--ion-color-tertiary);
+    }
+  }
+
+  ion-button {
+    button {
+      margin: 0;
+    }
+  }
+}

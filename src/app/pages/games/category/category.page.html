@@ -1,0 +1,381 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start" padding>
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>BASIC GAME</ion-title>
+        <ion-buttons slot="end">
+            <fiv-icon [off]="off" [dotVisible]="dot" slot="icon-only" [name]="iconCoins"></fiv-icon>
+            <ion-badge>{{twirlAndTipValue}}</ion-badge>
+        </ion-buttons>
+        <ion-buttons slot="end" padding>
+            <fiv-icon [off]=off [dotVisible]="dot" slot="icon-only" [indicatorValue]=0 [name]="iconSetting"
+                (click)="togglePopupMenu()"></fiv-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<div class="end-game" *ngIf="endGame"></div>
+<div class="display-keyboard" *ngIf="!openKeyboard && gameTheme && activeGame === true" (click)="displayKeyboard()"></div>
+<ion-content padding>
+    <div class="popup-menu">
+        <div class="popup-menu-overlay" [ngClass]="{'in': openMenu}" (click)="togglePopupMenu()"></div>
+        <div class="popup-menu-panel" [ngClass]="{'in': openMenu}">
+            <div class="popup-menu-item" (click)="twirlAndTipModel()">
+                <ion-icon [name]="iconTwirlAndTip"></ion-icon>
+                <ion-badge>{{twirlAndTipValue}}</ion-badge>
+                <span>SPIN</span>
+            </div>
+            <div class="popup-menu-item" (click)="settingsModel()">
+                <ion-icon name="person"></ion-icon>
+                <span>ACCOUNT</span>
+            </div>
+            <!--<div class="popup-menu-item" (click)="goToShop()">-->
+            <!--<ion-icon name="cart"></ion-icon>-->
+            <!--<ion-badge>0</ion-badge>-->
+            <!--<span>SHOP</span>-->
+            <!--</div>-->
+            <!--<div class="popup-menu-item" (click)="goToCups()">-->
+            <!--<ion-icon name="trophy"></ion-icon>-->
+            <!--<span>CUPS</span>-->
+            <!--</div>-->
+            <!--<div class="popup-menu-item" (click)="goToLeaderboard()">-->
+            <!--<ion-icon name="podium"></ion-icon>-->
+            <!--<ion-badge>0</ion-badge>-->
+            <!--<span>LEADERBOARD</span>-->
+            <!--</div>-->
+
+
+            <!--<div class="popup-menu-item" (click)="goToHelp()">-->
+            <!--<ion-icon name="help"></ion-icon>-->
+            <!--<span>HELP</span>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <ion-grid *ngIf="activeGame === false; else numberW" class="ion-text-center">
+        <h2 class="ion-text-center" color="primary">SELECT CATEGORY</h2>
+        <ion-card (click)="onSelectCate(1)">
+            <ion-card-header>
+                <ion-card-title color="primary">Animals</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(2)">
+            <ion-card-header>
+                <ion-card-title color="success">Male names</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(3)">
+            <ion-card-header>
+                <ion-card-title color="warning">Female names</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(4)">
+            <ion-card-header>
+                <ion-card-title color="danger">Cities</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(5)">
+            <ion-card-header>
+                <ion-card-title color="primary">One word movie titles</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(6)">
+            <ion-card-header>
+                <ion-card-title color="success">Countries</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(7)">
+            <ion-card-header>
+                <ion-card-title color="warning">Dog breed and Cat breed</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(8)">
+            <ion-card-header>
+                <ion-card-title color="danger">Flowers and Plants</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(9)" disabled>
+            <ion-card-header>
+                <ion-card-title color="success">Birds</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(10)">
+            <ion-card-header>
+                <ion-card-title color="warning">TV Shows with one word titles</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(11)">
+            <ion-card-header>
+                <ion-card-title color="danger">Colors</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(12)">
+            <ion-card-header>
+                <ion-card-title color="primary">Sports</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(13)">
+            <ion-card-header>
+                <ion-card-title color="success">Cars</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(14)">
+            <ion-card-header>
+                <ion-card-title color="warning">Beverages</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="onSelectCate(15)">
+            <ion-card-header>
+                <ion-card-title color="danger">One word song titles</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+
+        <!--<div *ngFor="let game of gameMaps; let i = index" [attr.data-index]="i">-->
+        <!--<ion-col size="3">-->
+        <!--<ion-card (click)="startGame(game.game_level,game.game_type)" [ngClass]="{'disableGame': game.game_level > game_level_unlocked}">-->
+        <!--<ion-card-content>-->
+        <!--<ion-card-title>Level {{game.game_level}}</ion-card-title>-->
+        <!--<ion-card-subtitle *ngIf="game.game_level > game_level_unlocked">finish previous level to unlock</ion-card-subtitle>-->
+        <!--</ion-card-content>-->
+        <!--</ion-card>-->
+        <!--</ion-col>-->
+        <!--</div>-->
+    </ion-grid>
+    <ng-template #numberW>
+        <div *ngIf="gameTheme;else select_game_theme">
+            <ion-label color="dark">Score: {{score}}</ion-label>
+            <div class="card" *ngIf="totalGameLevelScores < limitScoreToUnlockNewGame" padding>
+                <div class="progress-bar item-text-wrap" *ngIf="totalGameLevelScores && limitScoreToUnlockNewGame">
+                    <div class="loader" [ngStyle]="{'width.%':totalGameLevelScores/limitScoreToUnlockNewGame*100}">
+                        <p class="percent">{{totalGameLevelScores}}/{{limitScoreToUnlockNewGame}}</p>
+                    </div>
+                </div>
+            </div>
+            <ion-grid *ngIf="firstLastLetter">
+                <ion-row *ngFor="let wordGameItem of numGameWordArr; let i = index" [attr.data-index]="i">
+                    <ion-col *ngFor="let wordGameCharacter of numGameLetterArr; let j = index" [attr.data-index]="j">
+                        <div *ngIf="(i==0 && j==0) || (i == numGameWordArr.length-1 && j == numGameLetterArr.length-1) ; else normalInput"
+                            class="first-last-character ion-text-center">
+                            <label [id]="'c'+i+j">{{firstLastLetter}}</label>
+                        </div>
+                        <ng-template #normalInput>
+                            <div *ngIf="j%2 == 0;else grayBackground" class="blue-background ion-text-center"
+                                [ngClass]="{'labelFocus': (focusI == i && focusJ == j)}">
+                                <label [id]="'c'+i+j"></label>
+                            </div>
+                            <ng-template #grayBackground>
+                                <div class="gray-background ion-text-center"
+                                    [ngClass]="{'labelFocus': (focusI == i && focusJ == j)}">
+                                    <label [id]="'c'+i+j"></label>
+                                </div>
+                            </ng-template>
+                        </ng-template>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <div></div>
+            <div class="section-keybard" [ngClass]="{'in': openKeyboard}">
+                <ion-grid *ngIf="openKeyboard">
+                    <ion-row>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('Q')" [ngClass]="{'disableKey': keyObj.q}">
+                                Q
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('W')" [ngClass]="{'disableKey':keyObj.w}">
+                                W
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('E')" [ngClass]="{'disableKey':keyObj.e}">
+                                E
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('R')" [ngClass]="{'disableKey':keyObj.r}">
+                                R
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('T')" [ngClass]="{'disableKey':keyObj.t}">
+                                T
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('Y')" [ngClass]="{'disableKey':keyObj.y}">
+                                Y
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('U')" [ngClass]="{'disableKey':keyObj.u}">
+                                U
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('I')" [ngClass]="{'disableKey':keyObj.i}">
+                                I
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('O')" [ngClass]="{'disableKey':keyObj.o}">
+                                O
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('P')" [ngClass]="{'disableKey':keyObj.p}">
+                                P
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('A')" [ngClass]="{'disableKey':keyObj.a}">
+                                A
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('S')" [ngClass]="{'disableKey':keyObj.s}">
+                                S
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('D')" [ngClass]="{'disableKey':keyObj.d}">
+                                D
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('F')" [ngClass]="{'disableKey':keyObj.f}">
+                                F
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('G')" [ngClass]="{'disableKey':keyObj.g}">
+                                G
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('H')" [ngClass]="{'disableKey':keyObj.h}">
+                                H
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('J')" [ngClass]="{'disableKey':keyObj.j}">
+                                J
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('K')" [ngClass]="{'disableKey':keyObj.k}">
+                                K
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('L')" [ngClass]="{'disableKey':keyObj.l}">
+                                L
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('Z')" [ngClass]="{'disableKey':keyObj.z}">
+                                Z
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('X')" [ngClass]="{'disableKey':keyObj.x}">
+                                X
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('C')" [ngClass]="{'disableKey':keyObj.c}">
+                                C
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('V')" [ngClass]="{'disableKey':keyObj.v}">
+                                V
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('B')" [ngClass]="{'disableKey':keyObj.b}">
+                                B
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('N')" [ngClass]="{'disableKey':keyObj.n}">
+                                N
+                            </div>
+                        </ion-col>
+                        <ion-col>
+                            <div class="key letter" (click)="selectLetter('M')" [ngClass]="{'disableKey':keyObj.m}">
+                                M
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row></ion-row>
+                </ion-grid>
+            </div>
+            <div class="section-keybard" [ngClass]="{'in': openKeyboard}">
+                <ion-grid *ngIf="openKeyboard">
+                    <ion-row class="ion-text-center">
+                        <ion-col>
+                            <ion-button expand="full" color="primary" (click)="chooseHint()">Hint</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #select_game_theme>
+        <ion-grid class="ion-text-center">
+            <ion-row>
+                <form #form="ngForm" (ngSubmit)="selectGameData(form)" method="post">
+                    <ion-item>
+                        <ion-label position="floating">Number of words</ion-label>
+                        <ion-input ngModel type="number" min="2" max="21" name="numberWord"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Number of letters per word</ion-label>
+                        <ion-input ngModel type="number" name="numberLetter"></ion-input>
+                    </ion-item>
+                    <ion-button [disabled]="disableBtn !== 1" type="submit" expand="full" color="primary">Play
+                    </ion-button>
+                </form>
+            </ion-row>
+        </ion-grid>
+        <!--<ion-grid>-->
+        <!--<ion-row>-->
+        <!--<ion-col>-->
+        <!--<ion-card class="spring" (click)="selectGameData('spring')">-->
+        <!--<ion-card-header>-->
+        <!--<ion-card-title color="primary">Spring</ion-card-title>-->
+        <!--</ion-card-header>-->
+        <!--</ion-card>-->
+        <!--</ion-col>-->
+        <!--<ion-col>-->
+        <!--<ion-card class="summer" (click)="selectGameData('summer')">-->
+        <!--<ion-card-header>-->
+        <!--<ion-card-title color="success">Summer</ion-card-title>-->
+        <!--</ion-card-header>-->
+        <!--</ion-card>-->
+        <!--</ion-col>-->
+        <!--</ion-row>-->
+        <!--<ion-row>-->
+        <!--<ion-col>-->
+        <!--<ion-card class="autumn" (click)="selectGameData('autumn')">-->
+        <!--<ion-card-header>-->
+        <!--<ion-card-title color="warning">Autumn</ion-card-title>-->
+        <!--</ion-card-header>-->
+        <!--</ion-card>-->
+        <!--</ion-col>-->
+        <!--<ion-col>-->
+        <!--<ion-card class="winter" (click)="selectGameData('winter')">-->
+        <!--<ion-card-header>-->
+        <!--<ion-card-title color="danger">Winter</ion-card-title>-->
+        <!--</ion-card-header>-->
+        <!--</ion-card>-->
+        <!--</ion-col>-->
+        <!--</ion-row>-->
+        <!--</ion-grid>-->
+    </ng-template>
+</ion-content>

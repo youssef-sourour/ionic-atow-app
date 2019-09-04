@@ -1,0 +1,7 @@
+{
+  "name": "atow-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

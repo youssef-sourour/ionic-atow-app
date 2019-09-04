@@ -1,0 +1,79 @@
+ion-content {
+  --background: transparent;
+}
+
+#wheel {
+  background: url("../../../assets/imgs/wheel.png") no-repeat center center /
+    cover;
+  -webkit-transition: -webkit-transform 4s ease-out;
+  width: 250px;
+  height: 250px;
+  z-index: 1;
+  display: block;
+  position: relative;
+}
+
+#wheel-background {
+  width: fit-content;
+  display: inline-block;
+  height: auto;
+  position: relative;
+  top: 35%;
+}
+
+#wheel-background::before {
+  content: "";
+  left: 0;
+  top: 0;
+  background: url("../../../assets/imgs/spin-wheel_background.png") no-repeat
+    center center / cover;
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+}
+
+ion-content {
+  --background: #fff url("../../../assets/imgs/bg_spin.png") no-repeat center
+    center / cover;
+}
+.button-spin {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 20%;
+}
+.button-spin-disabled {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 20%;
+  opacity: 0.5;
+}
+ion-toolbar {
+  --background: linear-gradient(
+      162deg,
+      rgba(56, 70, 108, 0.8) 20%,
+      rgba(56, 70, 108, 0.8) 100%
+    ),
+    url("https://www.nexiga.com/geomarketing-blog/wp-content/uploads/2017/11/shutterstock_654668191_Parkhaus.jpg")
+      bottom no-repeat;
+}
+.back {
+  position: absolute;
+  z-index: 11;
+  width: 50px;
+  left: 23px;
+  top: 23px;
+}
+.label {
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+  white-space: 2px;
+  top: 35px;
+  font-family: Multicolore;
+  left: 34%;
+  text-shadow: 0 0 0px black, 0 0 1px #232325;
+}

@@ -1,0 +1,29 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" padding>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>TWIRL AND TIP</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-img (click)="goBack()" class="back" src="../../../assets/imgs/back.png"></ion-img>
+  <ion-label class="label">DAILY SPIN</ion-label>
+</ion-header>
+
+<ion-content>
+  <ion-row style="margin-top:15%">
+    <ion-col text-center>
+      <div id="wheel-background">
+        <div id="wheel"></div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-img *ngIf="disableBtn===1;else buttonSpin" src="../../../assets/imgs/SPIN.png" class="button-spin-disabled">
+    </ion-img>
+    <ng-template #buttonSpin>
+      <ion-img src="../../../assets/imgs/SPIN.png" (click)="onStartClick()" class="button-spin"></ion-img>
+    </ng-template>
+  </ion-row>
+</ion-content>

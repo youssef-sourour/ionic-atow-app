@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SELECT PLAY OPTION</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card class="welcome-card">
+      <h2 class="ion-text-center">Please select your play option</h2>
+    <ion-card-content class="ion-text-center">
+      <h2>* "Progressive stage" which means you must accumulate enough points to move to the next level.</h2>
+      <h2>* “Player control” which will allow the player to play any level at any time. </h2>
+      <h2>*** you can change this option on setting ***</h2>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="full" color="primary" (click)="regProgressivePlay()">Progressive stage</ion-button>
+  <ion-button expand="full" color="danger" (click)="regControlPlay()">Player control</ion-button>
+</ion-content>

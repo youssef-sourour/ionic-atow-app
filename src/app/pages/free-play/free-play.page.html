@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>A TRAIL OF WORDS</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid class="ion-text-center">
+    <h2 class="ion-text-center" color="primary">SELECT LEVEL</h2>
+    <ion-card (click)="startGame(1,'basic')">
+      <ion-card-header>
+        <ion-card-title color="primary">Basic</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="startGame(2,'assorted')">
+      <ion-card-header>
+        <ion-card-title color="success">Assorted</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="startGame(3,'category')">
+      <ion-card-header>
+        <ion-card-title color="warning">Category</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="startGame(4,'drop')">
+      <ion-card-header>
+        <ion-card-title color="danger">Drop</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="startGame(5,'placement')">
+      <ion-card-header>
+        <ion-card-title color="primary">Placement</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="startGame(6,'listed-letters')">
+      <ion-card-header>
+        <ion-card-title color="success">Listed Letters</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="startGame(7,'hint')">
+      <ion-card-header>
+        <ion-card-title color="warning">Hint</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card (click)="startGame(8,'if-you-dare')">
+      <ion-card-header>
+        <ion-card-title color="danger">If You Dare</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </ion-grid>
+</ion-content>
+

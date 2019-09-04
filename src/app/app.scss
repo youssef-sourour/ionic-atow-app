@@ -1,0 +1,435 @@
+// App Styles
+// ----------------------------------------------------------------------------
+// Put style rules here that you want to apply to the entire application. These
+// styles are for the entire app and not just one component. Additionally, this
+// file can hold Sass mixins, functions, and placeholder classes to be imported
+// and used throughout the application.
+@font-face {
+  font-family: "Multicolore";
+  src: url("../assets/fonts/Multicolore.woff2") format("woff2"), url("../assets/fonts/Multicolore.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-Black.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-SemiBoldItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates ExLight";
+  src: url("../assets/fonts/MontserratAlternates-ExtraLight.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-SemiBold.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-Regular.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Italic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-Thin.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Light.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-SemiBoldItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-BlackItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-SemiBold.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-ExtraBold.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-ExtraBoldItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-ExtraBoldItalic.woff") format("woff");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Black.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-Light.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-ExtraLightItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-BoldItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-BlackItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-Medium.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-MediumItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-LightItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-ExtraLight.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-Italic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-BoldItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-ExtraBoldItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-ExtraBoldItalic.woff") format("woff");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-ThinItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-LightItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-MediumItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates ExLight";
+  src: url("../assets/fonts/MontserratAlternates-ExtraLightItalic.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-ThinItalic.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Thin.woff2") format("woff2"),
+    url("../assets/fonts/Montserrat-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("../assets/fonts/MontserratAlternates-Bold.woff2") format("woff2"),
+    url("../assets/fonts/MontserratAlternates-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.back {
+  position: absolute;
+  z-index: 11;
+  width: 50px;
+  left: 23px;
+  top: 23px;
+}
+.label {
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+  white-space: 2px;
+  top: 35px;
+  font-family: Multicolore;
+  left: 34%;
+  text-shadow: 0 0 0px black, 0 0 1px #232325;
+}
+
+//Modal
+
+.at-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1111111; /* Sit on top */
+  padding-top: 50%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .modal-btn {
+    margin-bottom: 12px;
+  }
+}
+.twirl {
+  background-position: center 165px, center 113px, 0px 0px, 0px 2px !important;
+}
+.old-game {
+  background: url(../assets/imgs/pop-up/bg-popup.png) !important;
+  background-size: 100% 100% !important;
+}
+/* Modal Content */
+.at-modal-content {
+  /* background: none; */
+  background: url(../assets/imgs/pop-up/p-coins.png), url(../assets/imgs/pop-up/sun_burst.png),
+    url(../assets/imgs/pop-up/bg-popup.png);
+  box-shadow: initial;
+  text-align: center;
+  font-family: Montserrat;
+  /*font-size: 26px;*/
+  font-size: 18px;
+  color: #fff;
+  background-size: 46% 30%, 100% 60%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center 119px, center, 0px 0px, 0px 2px;
+  margin: auto;
+  padding: 9px;
+  border: 1px solid #888;
+  width: 90%;
+  min-height: 266px;
+  border: none;
+  font-weight: 500;
+}
+
+/* The Close Button */
+.at-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.at-close:hover,
+.at-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.your-coin {
+  position: absolute;
+  left: 49%;
+  font-size: 24px;
+  margin-top: 3px;
+}
+.p-coin {
+  height: 35px;
+}
+.coin-pop {
+  width: 131px;
+  margin: 0 auto;
+}
+.bt-buy {
+  display: inline-block;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 26px;
+  border-radius: 27px;
+  border: 2px solid;
+  font-size: 22px;
+  margin-top: 40px;
+  color : #fff
+}
+.continue{
+  font-size: 18px !important;
+  margin: 0 auto;
+}
+.message-continue-old{
+  margin-top: 22px;
+  padding-top: 10px;
+}
+.blur-bg {
+  filter: blur(3px);
+}
+
+@media (max-width: 320px) {
+  .message-continue-old{
+    font-size: 20px;
+  }
+  .continue {
+    font-size: 13px !important;
+  }
+}
+@media screen and (device-width: 375px) and (device-height: 667px) {
+  .continue {
+    font-size: 16px !important;
+  }
+}

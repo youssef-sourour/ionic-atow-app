@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="profile" *ngIf="user">
+  <ion-card no-margin>
+    <ion-card-content class="bg-profile">
+      <ion-img src="assets/imgs/avatar.jpeg"></ion-img>
+      <ion-button icon-left color="secondary" (click)="selectImage()">
+      <ion-icon name="photos"></ion-icon>
+      Edit / Add Avatar
+      </ion-button>
+    </ion-card-content>
+    <ion-grid fixed no-padding>
+      <ion-row>
+        <ion-col size="12" padding>
+          <form #form="ngForm" (ngSubmit)="editUser(form)" method="post">
+            <ion-list margin-bottom>
+              <ion-list-header color="light">
+                <ion-label class="fw700">Account Info</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label color="dark" position="stacked">First Name:</ion-label>
+                <ion-input ngModel name="first_name" inputmode="text" placeholder="{{user.first_name}}"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="dark" position="stacked">Last Name:</ion-label>
+                <ion-input ngModel name="last_name" inputmode="text" placeholder="{{user.last_name}}"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="dark" position="stacked">User Name:</ion-label>
+                <ion-input ngModel name="user_name" inputmode="email" placeholder="{{user.user_name}}"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="dark" position="stacked">Email:</ion-label>
+                <ion-input ngModel name="email" inputmode="email" placeholder="{{user.email}}"></ion-input>
+              </ion-item>
+              <p padding>Keep password null if you dont want to change</p>
+              <ion-item>
+                <ion-label color="dark" position="stacked">Password:</ion-label>
+                <ion-input type="password" ngModel name="password" value=""></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="dark" position="stacked">Password Confirm:</ion-label>
+                <ion-input type="password" ngModel name="password_confirmation" value=""></ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-button expand="full" color="primary" type="submit">Save</ion-button>
+
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

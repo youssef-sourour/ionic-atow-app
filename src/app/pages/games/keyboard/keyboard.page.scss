@@ -1,0 +1,43 @@
+.key {
+  min-width: 25px;
+  min-height: 20px;
+  display: block;
+  background-color: #b6b7b4;
+  text-align: center;
+  line-height: 29px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: box-shadow 0.7s ease;
+  color: #020202;
+  font-size: 18px;
+  height: 30px;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+.section-keybard {
+  width: 100%;
+  height: 100%;
+  float: left;
+  opacity: 1;
+  padding: 0;
+  --padding-start: var(--ion-padding, 8px);
+  --padding-end: var(--ion-padding, 16px);
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+}
+.section-keybard.in {
+  width: 100%;
+  float: left;
+  opacity: 1;
+}
+.key:hover {
+  box-shadow: 0px 0px 10px #14b524;
+  z-index: 1000;
+}
+.disableKey {
+  color: #525252;
+  background-color: #696969;
+  pointer-events: none;
+}

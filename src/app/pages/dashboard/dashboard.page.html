@@ -1,0 +1,246 @@
+<!-- <ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>A TRAIL OF WORDS</ion-title>
+        <ion-buttons slot="end">
+            <fiv-icon [off]="off" [dotVisible]="dot" slot="icon-only" [name]="iconCoins"></fiv-icon>
+            <ion-badge>{{twirlAndTipValue}}</ion-badge>
+        </ion-buttons>
+        <ion-buttons slot="end" padding>
+            <fiv-icon [off]="off" [dotVisible]="dot" slot="icon-only" [indicatorValue]=0 [name]="iconSetting"
+                (click)="togglePopupMenu()"></fiv-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-header>
+    <ion-img style="height: 70px" src="../../../assets/imgs/pop-up/settings.png"></ion-img>
+</ion-header> -->
+<ion-header>
+    <ion-img (click)="togglePopupMenu()" class="settings" src="../../../assets/imgs/pop-up/settings.png"></ion-img>
+</ion-header>
+<ion-content id="bg-dashboard" padding>
+    <div class="popup-menu">
+        <div class="popup-menu-overlay" [ngClass]="{'in': openMenu}" (click)="togglePopupMenu()"></div>
+        <div class="popup-menu-panel" [ngClass]="{'in': openMenu}">
+            <div class="popup-menu-item" (click)="twirlAndTipModel()">
+                <ion-icon [name]="iconTwirlAndTip"></ion-icon>
+                <ion-badge>{{twirlAndTipValue}}</ion-badge>
+                <span>TWIRLANDTIP</span>
+            </div>
+            <div class="popup-menu-item" (click)="settingsModel()">
+                <ion-icon name="person"></ion-icon>
+                <span>ACCOUNT</span>
+            </div>
+            <div class="popup-menu-item" (click)="goToShop()">
+                <ion-icon name="cart"></ion-icon>
+                <span>SHOP</span>
+            </div>
+            <div class="popup-menu-item" (click)="goToCups()">
+                <ion-icon name="trophy"></ion-icon>
+                <span>CUPS</span>
+            </div>
+            <div class="popup-menu-item" (click)="goToLeaderboard()">
+                <ion-icon name="podium"></ion-icon>
+                <ion-badge>10</ion-badge>
+                <span>LEADERBOARD</span>
+            </div>
+
+
+            <div class="popup-menu-item" (click)="getFreeCoins()">
+                <ion-icon name="logo-youtube"></ion-icon>
+                <span>GET FREE COINS</span>
+            </div>
+        </div>
+    </div>
+    <!--<ion-grid>-->
+    <!--<ion-row>-->
+    <!--<ion-col>-->
+    <!--<ion-button (click)="showInterstitial()">Show Interstitial Ad</ion-button>-->
+    <!--</ion-col>-->
+    <!--</ion-row>-->
+    <!--<ion-row>-->
+    <!--<ion-col>-->
+    <!--<ion-button (click)="showRewardVideo()">Show Reward Video Ad</ion-button>-->
+    <!--</ion-col>-->
+    <!--</ion-row>-->
+    <!--</ion-grid>-->
+    <ion-grid class="ion-text-center" *ngIf="game_level_unlocked">
+        <!-- <h2 class="ion-text-center" color="primary">SELECT LEVEL</h2> -->
+        <!-- <ion-card (click)="startGame(1,'basic')"> -->
+        <!-- <ion-card-header> -->
+        <div class="pm-button pm-button-8" *ngIf="game_level_unlocked < 8; else enable8">
+            <span class="sp-level-locked sp-level8">IF YOU DARE</span>
+            <ion-img class="tooltip-map-locked8" src="../../../assets/imgs/lock-8.png"></ion-img>
+            <ion-img class="button-map" src="../../../assets/imgs/locked.png">
+            </ion-img>
+            <span class="sp-locked">8</span>
+        </div>
+        <ng-template #enable8>
+            <div class="pm-button pm-button-8" (click)="startGame(8,'if-you-dare')">
+                <span class="sp-level-unlock sp-level8">IF YOU DARE</span>
+                <ion-img class="tooltip-map8" src="../../../assets/imgs/unlock-8.png"></ion-img>
+                <ion-img class="button-map" src="../../../assets/imgs/unlocked.png"></ion-img>
+                <span class="sp-unlock">8</span>
+            </div>
+        </ng-template>
+        <!-- </ion-card-header> -->
+        <!-- </ion-card> -->
+
+        <div class="pm-button pm-button-7" *ngIf="game_level_unlocked <7; else enable7" (click)="startGame(7,'hint')">
+            <span class="sp-level-locked sp-level7">HINT</span>
+            <ion-img class="tooltip-map-locked7" src="../../../assets/imgs/texted-bar-locked.png"></ion-img>
+            <ion-img class="button-map" src="../../../assets/imgs/locked.png">
+            </ion-img>
+            <span class="sp-locked">7</span>
+        </div>
+        <ng-template #enable7>
+            <div class="pm-button pm-button-7" (click)="startGame(7,'hint')">
+                <span class="sp-level-unlock sp-level7">HINT</span>
+                <ion-img class="tooltip-map7" src="../../../assets/imgs/unlocked texted bar.png"></ion-img>
+                <ion-img class="button-map" src="../../../assets/imgs/unlocked.png">
+                </ion-img>
+                <span class="sp-unlock">7</span>
+            </div>
+        </ng-template>
+
+        <div class="pm-button pm-button-6" *ngIf="game_level_unlocked < 6; else enable6">
+            <span class="sp-level-locked sp-level6">LISTED LETTER</span>
+            <ion-img class="tooltip-map-locked6" src="../../../assets/imgs/locked text bar.png"></ion-img>
+            <ion-img (click)="startGame(6,'listed-letters')" class="button-map button6"
+                src="../../../assets/imgs/locked.png">
+            </ion-img>
+            <span class="sp-locked">6</span>
+        </div>
+        <ng-template #enable6>
+            <div class="pm-button pm-button-6" (click)="startGame(6,'listed-letters')">
+                <span class="sp-level-unlock sp-level6">LISTED LETTER</span>
+                <ion-img class="tooltip-map6" src="../../../assets/imgs/1.png"></ion-img>
+                <ion-img class="button-map" src="../../../assets/imgs/unlocked.png">
+                </ion-img>
+                <span class="sp-unlock">6</span>
+            </div>
+        </ng-template>
+
+        <div class="pm-button pm-button-5" *ngIf="game_level_unlocked < 5; else enable5"
+            (click)="startGame(5,'placement')">
+            <span class="sp-level-locked sp-level5">PLACEMENT</span>
+            <ion-img class="tooltip-map-locked5" src="../../../assets/imgs/locked text bar.png"></ion-img>
+            <ion-img class="button-map button5" src="../../../assets/imgs/locked.png">
+            </ion-img>
+            <span class="sp-locked">5</span>
+        </div>
+        <ng-template #enable5>
+            <div class="pm-button pm-button-5" (click)="startGame(5,'placement')">
+                <span class="sp-level-unlock sp-level5">PLACEMENT</span>
+                <ion-img class="tooltip-map-locked5" src="../../../assets/imgs/1.png"></ion-img>
+                <ion-img class="button-map" src="../../../assets/imgs/unlocked.png">
+                </ion-img>
+                <span class="sp-unlock">5</span>
+            </div>
+        </ng-template>
+
+        <div class="pm-button pm-button-4" *ngIf="game_level_unlocked < 4; else enable4">
+            <span class="sp-level-locked sp-level4">DROP</span>
+            <ion-img class="tooltip-map-locked4" src="../../../assets/imgs/texted-bar-locked.png"></ion-img>
+            <ion-img class="button-map button4" src="../../../assets/imgs/locked.png">
+            </ion-img>
+            <span class="sp-locked">4</span>
+        </div>
+        <ng-template #enable4>
+            <div class="pm-button pm-button-4" (click)="startGame(4,'drop')">
+                <span class="sp-level-unlock sp-level4">DROP</span>
+                <ion-img class="tooltip-map4" src="../../../assets/imgs/unlocked texted bar.png"></ion-img>
+                <ion-img class="button-map" src="../../../assets/imgs/unlocked.png">
+                </ion-img>
+                <span class="sp-unlock">4</span>
+            </div>
+        </ng-template>
+
+        <div class="pm-button pm-button-3" *ngIf="game_level_unlocked < 3; else enable3">
+            <span class="sp-level-locked sp-level3">CATEGORY</span>
+            <ion-img class="tooltip-map-locked3" src="../../../assets/imgs/locked text bar.png"></ion-img>
+            <ion-img class="button-map" src="../../../assets/imgs/locked.png">
+            </ion-img>
+            <span class="sp-locked">3</span>
+        </div>
+        <ng-template #enable3>
+            <div class="pm-button pm-button-3" (click)="startGame(3,'category')">
+                <span class="sp-level-unlock sp-level3">CATEGORY</span>
+                <ion-img class="tooltip-map3" src="../../../assets/imgs/1.png"></ion-img>
+                <ion-img class="button-map" src="../../../assets/imgs/unlocked.png">
+                </ion-img>
+                <span class="sp-unlock">3</span>
+            </div>
+        </ng-template>
+
+        <div class="pm-button pm-button-2" *ngIf="game_level_unlocked < 2; else enable2">
+            <span class="sp-level-locked sp-level2">ASSORTED</span>
+            <ion-img class="tooltip-map-locked2" src="../../../assets/imgs/locked text bar.png"></ion-img>
+            <ion-img class="button-map" src="../../../assets/imgs/locked.png">
+            </ion-img>
+            <span class="sp-locked">2</span>
+        </div>
+        <ng-template #enable2>
+            <div class="pm-button pm-button-2" (click)="startGame(2,'assorted')">
+                <span class="sp-level-unlock sp-level2">ASSORTED</span>
+                <ion-img class="tooltip-map2" src="../../../assets/imgs/1.png"></ion-img>
+                <ion-img class="button-map" src="../../../assets/imgs/unlocked.png">
+                </ion-img>
+                <span class="sp-unlock">2</span>
+            </div>
+        </ng-template>
+        <div class="pm-button pm-button-1" (click)="startGame(1,'basic')">
+            <span class="sp-level-unlock sp-level1">BASIC</span>
+            <ion-img class="tooltip-map1" src="../../../assets/imgs/unlocked texted bar.png"></ion-img>
+            <ion-img class="button-map" src="../../../assets/imgs/unlocked.png">
+            </ion-img>
+            <span class="sp-unlock">1</span>
+        </div>
+        <!-- <ion-card (click)="startGame(2,'assorted')" [ngClass]="{'disableGame': game_level_unlocked < 2 }">
+            <ion-card-header>
+                <ion-card-title color="success">Assorted</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="startGame(3,'category')" [ngClass]="{'disableGame': game_level_unlocked < 3 }">
+            <ion-card-header>
+                <ion-card-title color="warning">Category</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="startGame(4,'drop')" [ngClass]="{'disableGame': game_level_unlocked < 4 }">
+            <ion-card-header>
+                <ion-card-title color="danger">Drop</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="startGame(5,'placement')" [ngClass]="{'disableGame': game_level_unlocked < 5 }">
+            <ion-card-header>
+                <ion-card-title color="primary">Placement</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="startGame(6,'listed-letters')" [ngClass]="{'disableGame': game_level_unlocked < 6 }">
+            <ion-card-header>
+                <ion-card-title color="success">Listed Letters</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="startGame(7,'hint')" [ngClass]="{'disableGame': game_level_unlocked < 7 }">
+            <ion-card-header>
+                <ion-card-title color="warning">Hint</ion-card-title>
+            </ion-card-header>
+        </ion-card>
+        <ion-card (click)="startGame(8,'if-you-dare')" [ngClass]="{'disableGame': game_level_unlocked < 8 }">
+            <ion-card-header>
+                <ion-card-title color="danger">If You Dare</ion-card-title>
+            </ion-card-header>
+        </ion-card> -->
+
+        <!--<div *ngFor="let game of gameMaps; let i = index" [attr.data-index]="i">-->
+        <!--<ion-col size="3">-->
+        <!--<ion-card (click)="startGame(game.game_level,game.game_type)" [ngClass]="{'disableGame': game.game_level > game_level_unlocked}">-->
+        <!--<ion-card-content>-->
+        <!--<ion-card-title>Level {{game.game_level}}</ion-card-title>-->
+        <!--<ion-card-subtitle *ngIf="game.game_level > game_level_unlocked">finish previous level to unlock</ion-card-subtitle>-->
+        <!--</ion-card-content>-->
+        <!--</ion-card>-->
+        <!--</ion-col>-->
+        <!--</div>-->
+    </ion-grid>
+</ion-content>

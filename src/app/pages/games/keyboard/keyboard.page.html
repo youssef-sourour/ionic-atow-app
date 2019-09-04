@@ -1,0 +1,150 @@
+<div class="section-keybard" [ngClass]="{'in': openKeyboard}">
+    <ion-grid *ngIf="openKeyboard">
+        <ion-row>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('Q')" [ngClass]="{'disableKey': keyObj.q}">
+                    Q
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('W')" [ngClass]="{'disableKey':keyObj.w}">
+                    W
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('E')" [ngClass]="{'disableKey':keyObj.e}">
+                    E
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('R')" [ngClass]="{'disableKey':keyObj.r}">
+                    R
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('T')" [ngClass]="{'disableKey':keyObj.t}">
+                    T
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('Y')" [ngClass]="{'disableKey':keyObj.y}">
+                    Y
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('U')" [ngClass]="{'disableKey':keyObj.u}">
+                    U
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('I')" [ngClass]="{'disableKey':keyObj.i}">
+                    I
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('O')" [ngClass]="{'disableKey':keyObj.o}">
+                    O
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('P')" [ngClass]="{'disableKey':keyObj.p}">
+                    P
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row style="padding: 0px 20px 0px 20px;">
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('A')" [ngClass]="{'disableKey':keyObj.a}">
+                    A
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('S')" [ngClass]="{'disableKey':keyObj.s}">
+                    S
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('D')" [ngClass]="{'disableKey':keyObj.d}">
+                    D
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('F')" [ngClass]="{'disableKey':keyObj.f}">
+                    F
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('G')" [ngClass]="{'disableKey':keyObj.g}">
+                    G
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('H')" [ngClass]="{'disableKey':keyObj.h}">
+                    H
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('J')" [ngClass]="{'disableKey':keyObj.j}">
+                    J
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('K')" [ngClass]="{'disableKey':keyObj.k}">
+                    K
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('L')" [ngClass]="{'disableKey':keyObj.l}">
+                    L
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row style="padding: 0px 40px 0px 40px;">
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('Z')" [ngClass]="{'disableKey':keyObj.z}">
+                    Z
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('X')" [ngClass]="{'disableKey':keyObj.x}">
+                    X
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('C')" [ngClass]="{'disableKey':keyObj.c}">
+                    C
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('V')" [ngClass]="{'disableKey':keyObj.v}">
+                    V
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('B')" [ngClass]="{'disableKey':keyObj.b}">
+                    B
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('N')" [ngClass]="{'disableKey':keyObj.n}">
+                    N
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="key letter" (tap)="selectLetter('M')" [ngClass]="{'disableKey':keyObj.m}">
+                    M
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
+<div class="section-keybard" [ngClass]="{'in': openKeyboard}">
+    <ion-grid *ngIf="openKeyboard">
+        <ion-row class="ion-text-center">
+            <ion-col>
+                <ion-img style="height:34px" (click)="chooseHint()"
+                    src="../../../assets/imgs/gameplay/hint.png"></ion-img>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>

@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" padding>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>SETTINGS</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="user">
+  <ion-item class="bg-profile">
+    <ion-avatar slot="start">
+      <img src="assets/imgs/avatar.jpeg" class="user-avatar">
+    </ion-avatar>
+    <ion-label>
+      <ion-text color="dark">
+        <h2>
+          <strong>{{user.first_name}} {{user.last_name}}</strong>
+        </h2>
+      </ion-text>
+      <ion-text color="tertiary">
+        <h3>
+          {{user.email}}
+        </h3>
+      </ion-text>
+      <ion-button icon-left size="small" shape="round" color="dark" (click)="editProfile()">
+        <ion-icon name="contact"></ion-icon>
+        Edit profile
+      </ion-button>
+      <ion-button icon-left size="small" shape="round" color="secondary" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        logout
+      </ion-button>
+    </ion-label>
+  </ion-item>
+
+  <ion-list no-border>
+    <ion-list-header>
+      <ion-text color="dark">
+        <h5>General</h5>
+      </ion-text>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="musical-notes" slot="start" color="primary"></ion-icon>
+      <ion-label class="label" color="primary"> All Sound </ion-label>
+      <ion-toggle [(ngModel)]="disableAllSound"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="musical-note" slot="start" color="primary"></ion-icon>
+      <ion-label class="label" color="primary"> Spring Sound </ion-label>
+      <ion-toggle [disabled]="disableAllSound !== true" [(ngModel)]="disableSpringSound"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="musical-note" slot="start" color="primary"></ion-icon>
+      <ion-label class="label" color="primary"> Summer Sound </ion-label>
+      <ion-toggle [disabled]="disableAllSound !== true" [(ngModel)]="disableSummerSound"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="musical-note" slot="start" color="primary"></ion-icon>
+      <ion-label class="label" color="primary"> Autumn Sound </ion-label>
+      <ion-toggle [disabled]="disableAllSound !== true" [(ngModel)]="disableAutumnSound"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="musical-note" slot="start" color="primary"></ion-icon>
+      <ion-label class="label" color="primary"> Winter Sound </ion-label>
+      <ion-toggle [disabled]="disableAllSound !== true" [(ngModel)]="disableWinterSound"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+  <ion-list no-border>
+    <ion-list-header>
+      <ion-text color="dark">
+        <h5>Theme</h5>
+      </ion-text>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="settings" slot="start" color="primary"></ion-icon>
+      <ion-label color="primary">Theme</ion-label>
+      <ion-select [(ngModel)]="themeItem" (ionChange)="changeTheme();">
+        <ion-select-option *ngFor="let themeItem of themeList" [value]="themeItem">{{themeItem}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

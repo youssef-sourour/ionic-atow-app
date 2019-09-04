@@ -1,0 +1,216 @@
+<!-- <ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start" padding>
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>SHOP</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+<ion-header>
+    <ion-img (click)="goBack()" class="back" src="../../../assets/imgs/back.png"></ion-img>
+    <ion-label class="label">SHOP</ion-label>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <div class="wrap-item">
+            <ion-row>
+                <ion-card>
+
+                    <ion-card-content>
+                        <ion-row>
+                            <ion-col>
+                                <ion-img src="../../../assets/imgs/s-coins 1.png"></ion-img>
+                            </ion-col>
+                            <ion-col>
+                                <ion-row>
+                                    <ion-col>
+                                        <h1 class="name-coins">200 COINS</h1>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="number-coins">$0.99</h6>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-img src="../../../assets/imgs/s-buy.png"
+                                            (click)="buyProduct('atow_coins_200')"></ion-img>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card-content>
+
+                </ion-card>
+            </ion-row>
+            <ion-row>
+                <ion-card>
+
+                    <ion-card-content>
+                        <ion-row>
+                            <ion-col>
+                                <div class="wrapp">
+                                    <ion-img class="elips" src="../../../assets/imgs/s-elips.png"></ion-img>
+                                    <h1 class="discount">+10%</h1>
+                                </div>
+                                <ion-img class="img-coin1"  src="../../../assets/imgs/s-coins 2.png"></ion-img>
+                            </ion-col>
+                            <ion-col>
+                                <ion-row>
+                                    <ion-col>
+                                        <h1 class="name-coins">400 COINS</h1>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="number-coins">$1.59</h6>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-img src="../../../assets/imgs/s-buy.png"
+                                            (click)="buyProduct('atow_coins_400')"></ion-img>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </ion-row>
+            <ion-row>
+                <ion-card>
+
+                    <ion-card-content>
+                        <ion-row>
+
+                            <ion-col>
+                                <div class="wrapp">
+                                    <ion-img class="elips" src="../../../assets/imgs/s-elips.png"></ion-img>
+                                    <h1 class="discount">+10%</h1>
+                                </div>
+                                <ion-img class="img-coin" src="../../../assets/imgs/s-coin 3.png"></ion-img>
+                            </ion-col>
+                            <ion-col>
+                                <ion-row>
+                                    <ion-col>
+                                        <h1 class="name-coins">750 COINS</h1>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="number-coins">$2.59</h6>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-col>
+                                            <ion-img src="../../../assets/imgs/s-buy.png"
+                                                (click)="buyProduct('atow_coins_750')"></ion-img>
+                                        </ion-col>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </ion-row>
+            <ion-row>
+                <ion-card>
+
+                    <ion-card-content>
+                        <ion-row>
+                            <ion-col>
+                                <div class="wrapp">
+                                    <ion-img class="elips" src="../../../assets/imgs/s-elips.png"></ion-img>
+                                    <h1 class="discount">+10%</h1>
+                                </div>
+                                <ion-img style="width: 106px;" src="../../../assets/imgs/s-coins 4.png"></ion-img>
+                            </ion-col>
+                            <ion-col>
+                                <ion-row>
+                                    <ion-col>
+                                        <h1 class="name-coins">1000 COINS</h1>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <h6 class="number-coins">$3.99</h6>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col>
+                                        <ion-img src="../../../assets/imgs/s-buy.png"
+                                            (click)="buyProduct('atow_coins_1000')"></ion-img>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </ion-row>
+        </div>
+        <!-- <ion-row>
+            <ion-card>
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col><img src="../../../assets/imgs/200coins.png" />
+                        </ion-col>
+                        <ion-col>
+                            <ion-row>
+                                <ion-col>
+                                    <h1>2000 COINS</h1>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <h6>6.99$</h6>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-button>
+                                        <h2 class="buy" (click)="buyProduct('atow_no_ads')">BUY</h2>
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </ion-row>
+        <ion-row>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>
+                        No ads
+                    </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col><img src="../../../assets/imgs/noads.png" /></ion-col>
+                        <ion-col>
+                            <ion-row>
+                                <ion-col>
+                                    <h1>NO ADS</h1>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <h6>1.99$</h6>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col>
+                                    <ion-button>
+                                        <h2 class="buy">BUY</h2>
+                                    </ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </ion-row> -->
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,113 @@
+ion-card {
+  width: 100%;
+  border-radius: 25px;
+}
+
+ion-col {
+  text-align: center;
+}
+
+ion-button {
+  width: 60%;
+  --border-radius: 100px;
+  --ion-color-primary: #ffce01;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3171e0;
+  --ion-color-primary-tint: #4c8dff;
+}
+
+.buy {
+  color: #fff;
+  text-shadow: 2px 0 0 #510d13, -2px 0 0 #510d13, 0 2px 0 #510d13, 0 -2px 0 #510d13, 1px 1px #510d13,
+    -1px -1px 0 #510d13, 1px -1px 0 #510d13, -1px 1px 0 #510d13;
+}
+ion-content {
+  --background: url("../../../assets/imgs/s-bg.png") no-repeat center center / cover;
+}
+ion-card {
+  width: 100%;
+  border-radius: 25px;
+  background: #fff !important;
+}
+.back {
+  position: absolute;
+  z-index: 11;
+  width: 50px;
+  left: 23px;
+  top: 23px;
+}
+.label {
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+  white-space: 2px;
+  top: 35px;
+  font-family: Multicolore;
+  left: 40%;
+  text-shadow: 0 0 0px black, 0 0 1px #232325;
+}
+.elips {
+  position: absolute;
+  width: 50px;
+  left: 72px;
+  top: -18px;
+}
+.img-coin {
+  width: 110px;
+  height: 152px;
+}
+.number-coins {
+  font-family: Multicolore;
+  color: #959595;
+}
+.name-coins {
+  font-family: Multicolore;
+  color: #5d5d5d;
+  font-size: 18px;
+}
+.discount {
+  font-family: Multicolore;
+  color: #fff;
+  font-size: 16px;
+  z-index: 111;
+  position: absolute;
+  left: 77px;
+  top: -2px;
+}
+.wrapp {
+  left: calc(50% - 44px);
+  position: relative;
+  top: 10px;
+}
+.wrap-item {
+  height: calc(100vh - 90px);
+  overflow: scroll;
+  top: 90px;
+  position: relative;
+}
+.card-content-ios {
+  padding-left: unset;
+  padding-right: unset;
+  -webkit-padding-start: 7px !important;
+  padding-inline-start: 7px !important;
+  -webkit-padding-end: 7px !important;
+  padding-inline-end: 7px !important;
+}
+@media screen and (device-width: 375px) and (device-height: 812px) {
+  .img-coin1 {
+    width: 147px;
+    height: 124px;
+  }
+  .img-coin{
+    width: 124px;
+    height: 152px;
+  }
+}
+@media (max-width: 320px) {
+  .img-coin1 {
+    width: 105px;
+    height: 92px;
+  }
+}
